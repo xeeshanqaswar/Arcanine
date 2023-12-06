@@ -7,6 +7,8 @@ const Type = {
     Design: "design"
 }
 
+let projectId = "id";
+
 function SecondaryFooter(){
 
     var footerContent = `<footer class="site-footer footer-default-style pd-b-20">
@@ -150,7 +152,7 @@ function SecondaryHeader(){
 
                                 <div class="header-navigation-right">
                                     <div class="lets-talk-area">
-                                        <a class="btn btn-default" href="#">Consultation</a>
+                                        <a class="btn btn-default" href="#">Let's Talk</a>
                                     </div><!--~./ lets-talk-area ~-->
                                 </div><!--~./ header-navigation-right ~-->
                             </div><!-- /.navigation-area -->
@@ -163,27 +165,70 @@ function SecondaryHeader(){
 
 }
 
-function PortfolioData(){
+function SetPortfolio(){
 
-    var itemType = Type.Games;
-    var chunk =`<div class="col-md-6 col-lg-4 ${itemType} item">
+    var portfolioJson = JSON.parse(GetJsonData("https://raw.githubusercontent.com/xeeshanqaswar/Host-Json/master/Arcanine/Portfolio.json"));
+
+    let itemType;
+    let projectTitle;
+
+    for (let i = 0; i < portfolioJson.length; i++) {
+
+        itemType = portfolioJson[i].type;
+        projectTitle = portfolioJson[i].title;
+        document.write(baseData(itemType, projectTitle,i));
+    }
+
+    function baseData(pType, pTitle, id){
+        
+        let imgUrl = `assets/images/portfolio/${pType}/${pTitle}/display.jpg`;
+        let redirectUrl = `portfolio-single.html?${projectId}=${id}`;
+
+        var chunk =`<div class="col-md-6 col-lg-4 ${pType} item">
                     <div class="portfolio-item portfolio-one" data-animate="hg-zoomIn">
                         <figure class="portfolio-thumb">
-                            <img src="assets/images/portfolio/1/1.jpg" alt="Portfolio Item">
+                            <img src="${imgUrl}" alt="Portfolio Item">
                             <div class="content">
                                 <div class="portfolio-title">
-                                    <h3><a href="portfolio-single-Dev.html">Branding Abstract</a></h3>
+                                    <h3><a href="${redirectUrl}">${pTitle}</a></h3>
                                 </div>
                                 <div class="icon">
-                                    <a href="portfolio-single-Dev.html"><span class="fa fa-long-arrow-right"></span></a>
+                                    <a href="${redirectUrl}"><span class="fa fa-long-arrow-right"></span></a>
                                 </div>
                             </div><!-- /.content -->  
                         </figure><!-- /.portfolio-thumb -->               
                     </div><!-- /.portfolio-item -->
                 </div><!-- /.col-lg-4 -->`;
 
+        return chunk;
+    }
+}
 
-    for (let i = 0; i < 5; i++) {
+function TeamData(){
+
+    var memberName = "Tayyab Qaswar";
+    var memberRole = "CEO";
+
+    var chunk =`<div class="col-lg-4 col-md-6">
+                    <div class="team-member-card" data-animate="hg-fadeInUp" data-duration="1.0s" data-offset="100">
+                        <div class="member-thumb">
+                            <img src="assets/images/team/1.png" alt="Member Image">
+                        </div><!-- /.member-thumb -->
+                        <h3 class="member-name">${memberName}</h3>
+                        <p class="member-designation">${memberRole}</p>
+                    </div><!-- /.team-member-card -->
+                </div><!-- /.col-lg-4 -->`;
+
+
+    for (let i = 0; i < 3; i++) {
+        let moddedUrl = 
         document.write(chunk);
     }
+}
+
+function GetJsonData(yourUrl){
+    var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.open("GET",yourUrl,false);
+    Httpreq.send(null);
+    return Httpreq.responseText;          
 }
