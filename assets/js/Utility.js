@@ -1,5 +1,12 @@
 // Contains Utility Functions for Website
 
+const Type = {
+    Website: "websites",
+    Apps : "mobileapps",
+    Games: "games",
+    Design: "design"
+}
+
 function SecondaryFooter(){
 
     var footerContent = `<footer class="site-footer footer-default-style pd-b-20">
@@ -143,7 +150,7 @@ function SecondaryHeader(){
 
                                 <div class="header-navigation-right">
                                     <div class="lets-talk-area">
-                                        <a class="btn btn-default" href="#">Let's Talk</a>
+                                        <a class="btn btn-default" href="#">Consultation</a>
                                     </div><!--~./ lets-talk-area ~-->
                                 </div><!--~./ header-navigation-right ~-->
                             </div><!-- /.navigation-area -->
@@ -154,4 +161,29 @@ function SecondaryHeader(){
     
     document.write(data);
 
+}
+
+function PortfolioData(){
+
+    var itemType = Type.Games;
+    var chunk =`<div class="col-md-6 col-lg-4 ${itemType} item">
+                    <div class="portfolio-item portfolio-one" data-animate="hg-zoomIn">
+                        <figure class="portfolio-thumb">
+                            <img src="assets/images/portfolio/1/1.jpg" alt="Portfolio Item">
+                            <div class="content">
+                                <div class="portfolio-title">
+                                    <h3><a href="portfolio-single-Dev.html">Branding Abstract</a></h3>
+                                </div>
+                                <div class="icon">
+                                    <a href="portfolio-single-Dev.html"><span class="fa fa-long-arrow-right"></span></a>
+                                </div>
+                            </div><!-- /.content -->  
+                        </figure><!-- /.portfolio-thumb -->               
+                    </div><!-- /.portfolio-item -->
+                </div><!-- /.col-lg-4 -->`;
+
+
+    for (let i = 0; i < 5; i++) {
+        document.write(chunk);
+    }
 }
