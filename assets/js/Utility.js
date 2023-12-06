@@ -226,6 +226,25 @@ function TeamData(){
     }
 }
 
+function CallToAction(){
+    
+    var data = `<div class="call-to-action bg-center" style="background-image: url('assets/images/bg/map.png');">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <h2 class="call-to-title">Let’s create creativity inspiration <span>projects</span> together</h2><!-- /.call-to-title -->
+                                <div class="action-btn-group pd-t-40">
+                                    <a href="#" class="btn btn-default btn-primary">Request a Quote</a>
+                                    <a href="#" class="btn btn-default">Let's Talk</a>
+                                </div><!-- /.action-btn-group -->
+                            </div><!-- /.col-lg-8 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!--~~./ end call to action ~~-->`;
+
+    document.write(data);
+}
+
 function GetJsonData(yourUrl){
     var Httpreq = new XMLHttpRequest(); // a new request
     Httpreq.open("GET",yourUrl,false);
