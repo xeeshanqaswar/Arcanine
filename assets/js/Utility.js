@@ -7,6 +7,13 @@ const Type = {
     Design: "design"
 }
 
+function GetJsonData(yourUrl){
+    var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.open("GET",yourUrl,false);
+    Httpreq.send(null);
+    return Httpreq.responseText;          
+}
+
 let projectId = "id";
 
 function SecondaryFooter(){
@@ -245,9 +252,77 @@ function CallToAction(){
     document.write(data);
 }
 
-function GetJsonData(yourUrl){
-    var Httpreq = new XMLHttpRequest(); // a new request
-    Httpreq.open("GET",yourUrl,false);
-    Httpreq.send(null);
-    return Httpreq.responseText;          
+function PrintTestimonials(){
+
+    var jsonData = JSON.parse(GetJsonData("https://raw.githubusercontent.com/xeeshanqaswar/Host-Json/master/Arcanine/Testimonials.json"));
+    console.log(jsonData);
+    let tempData;
+    for (let i = 0; i < jsonData.length; i++) {
+        
+        tempData += GenerateTestimoniaForClient(jsonData[i].remarks, jsonData[i].name, jsonData[i].designation, jsonData[i].imgIndex); 
+    }
+
+    let finalHtml = `<div id="testimonial-block" class="testimonial-block mrb-200">
+                    <div class="container ml-t-10 ml-b-30">
+                        <!-- Title Row -->
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-lg-5 col-md-8">
+                                <div class="section-title">
+                                    <h4 class="title-sub">testimonials <img src="assets/images/icon/divider.png" alt="icon"></h4><!--  /.title-sub -->
+                                    <h2 class="title-main">Authenticity, honesty, & personal voice </h2><!-- /.title-main -->
+                                </div><!-- /.section-title -->
+                                <div class="btn-links-area">
+                                    <button class="btn-links btn-prev">
+                                        <span class="icon-arrows"></span>
+                                    </button>
+                                    <button class="btn-links btn-next">
+                                        <span class="icon-arrows-1"></span>
+                                    </button>
+                                </div><!-- /.btn-links-area -->
+                            </div><!-- /.col-lg-5 -->
+                            
+                            <div class="col-lg-6">
+                                <div class="testimonial-slide-area">
+                                    <div class="testimonial-slick-wrapper">  
+
+                                        ${tempData}
+
+                                    </div>
+                                </div><!-- /.testimonial-slide-area -->
+                            </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!--~~./ end testimonial block ~~-->`;
+
+    document.write(finalHtml);
+
+    function GenerateTestimoniaForClient(desc, name, designation, imgIndex){
+
+        let unitTestimonial = `<div class="slick-slide-item">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-item-inner">
+                                        <div class="quote-icon">
+                                            <img src="assets/images/icon/quote2.png" alt="Icon">
+                                        </div><!-- /.quote-icon -->
+                                        <div class="client-testimonial">
+                                            <div class="client-thumb">
+                                                <img src="assets/images/testimonials/${imgIndex}.png" alt="${name}" />
+                                            </div><!-- /.client-thumb -->
+                                            <div class="testimonial-details">
+                                                <div class="details">
+                                                    <p>${desc}</p>
+                                                </div><!-- /.details -->
+                                                <div class="client-area">
+                                                    <h4 class="client-name">${name}</h4><!--  /.client-name -->
+                                                    <p class="client-designation">${designation}</p>
+                                                </div><!-- /.client-area -->
+                                            </div><!-- /.testimonial-details -->
+                                        </div><!-- /.client-testimonial -->
+                                    </div><!-- /.testimonial-item-inner -->
+                                </div><!-- /.testimonial-item --> 
+                            </div><!-- /.slick-slide-item -->`;
+
+        return unitTestimonial;
+    }
+
 }
