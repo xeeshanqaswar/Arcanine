@@ -62,10 +62,10 @@
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             Start Site Header
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-        <script> SecondaryHeader(); </script>
         <!--~~./ end site header ~~-->
-        
+        <script> SecondaryHeader(); </script>
         <!--~~~ Sticky Header ~~~-->
+        
         <div id="sticky-header"></div><!--~./ end sticky header ~-->
        
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,7 +87,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>  
                                     <li class="breadcrumb-item"><a href="portfolio-v1.html">Portfolio</a></li>  
-                                    <li class="breadcrumb-item active" id ="portfolio-breadcrumb">Portfolio Single</li>
+                                    <li id="portfolio-breadcrumb" class="breadcrumb-item active">Portfolio Single</li>
                                 </ol>
                             </div><!--~~./ breadcrumb-area ~~-->
                         </div><!--~~./ page-header-content ~~-->
@@ -104,46 +104,58 @@
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             Start Portfolio Page Block
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-        <div class="portfolio-page-block mrb-105">
+        <div class="portfolio-page-block portfolio-page-style-two mrb-105">
+           
             <div class="container">
                 <!-- Content Row -->
-                <div class="row justify-content-between portfolio-sticky">
-                    <div class="col-lg-6" id="portfolio-images">
+                <div class="row">
+                    <div class="col">
+                        <figure id = "p-Banner">
+                            
+                        </figure>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+                
+                <!-- Content Row -->
+                <div class="row justify-content-center mrt-90">
+                    <div class="col">
+                        <div class="portfolio-details">
+                            <h2 class="portfolio-title" id ="p-title">Costa Rica Coffe Rebranding</h2><!-- /.portfolio-title -->
+                            <div class="portfolio-content">
+                                <p id="p-desc" >Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends.</p>
+                            </div><!-- /.portfolio-content -->
+                        </div><!-- /.portfolio-details -->
+                        
+                        <div class="portfolio-meta pd-b-45">
+                            <div class="meta-item">
+                                Client <span id="p-client">Costa Rica</span>
+                            </div><!-- /.meta-item -->
+                            <div class="meta-item">
+                                Category <span >Branding, Graphic Design</span>
+                            </div><!-- /.meta-item -->
+                            <div class="meta-item">
+                                published <span id="p-date">Janurary 19, 2019</span>
+                            </div><!-- /.meta-item -->
+                            <div class="meta-item">
+                                share
+                                <div class="social-status">
+                                   <a href="#"><i class="fa fa-facebook"></i></a>
+                                   <a href="#"><i class="fa fa-twitter"></i></a>
+                                   <a href="#"><i class="fa fa-instagram"></i></a>
+                                   <a href="#"><i class="fa fa-google-plus"></i></a>
+                                </div>
+                            </div><!-- /.meta-item -->
+                        </div><!-- /.portfolio-meta -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+                
+                <!-- Content Row -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-6" id ="portfolio-images">
 
+                         <!-- Portfolio Images comes here -->
                         
                     </div><!-- /.col-lg-6 -->
-                    
-                    <div class="col-lg-5">
-                        <div class="portfolio-details portfolio-details-sticky">
-                            <h2 class="portfolio-title" id="p-title">Costa Rica Coffe Rebranding</h2><!-- /.portfolio-title -->
-                            <div class="portfolio-content">
-                                <p id = "p-desc">Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends.</p>
-                            </div><!-- /.portfolio-content -->
-                            <div class="portfolio-meta">
-                                <div class="meta-item">
-                                    Client <span id="p-client">Costa Rica</span>
-                                </div><!-- /.meta-item -->
-                                <div class="meta-item">
-                                    Category <span>Branding, Graphic Design</span>
-                                </div><!-- /.meta-item -->
-                                <div class="meta-item">
-                                    published <span id="p-date">Janurary 19, 2019</span>
-                                </div><!-- /.meta-item -->
-                                <div class="meta-item">
-                                    share
-                                    <div class="social-status">
-                                       <a href="#"><i class="fa fa-facebook"></i></a>
-                                       <a href="#"><i class="fa fa-twitter"></i></a>
-                                       <a href="#"><i class="fa fa-instagram"></i></a>
-                                       <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                </div><!-- /.meta-item -->
-                            </div><!-- /.portfolio-meta -->
-                            <div class="site-link">
-                                <a class="btn btn-default" id="p-link" target="_blank" href="#">Visit Website</a>
-                            </div><!-- /.site-link -->
-                        </div><!-- /.portfolio-details -->
-                    </div><!-- /.col-lg-4 -->
                 </div><!-- /.row -->
                 
                 <!-- <div class="row">
@@ -158,6 +170,7 @@
                                     <img src="assets/images/portfolio/prev.jpg" alt="Portfolio">
                                 </div>
                             </a>
+
                             <a class="next-link" href="portfolio-single.html">
                                 <div class="link-thumb">
                                     <img src="assets/images/portfolio/next.jpg" alt="Portfolio">
@@ -172,9 +185,6 @@
                 </div> -->
 
                 
-            <script>CallToAction();</script>
-
-
             </div><!-- /.container -->
         </div><!-- /.portfolio-page-block -->  
         
@@ -227,6 +237,10 @@
             document.getElementById("p-date").innerHTML = portfolioJson[pId].date; 
             document.getElementById("p-link").href = portfolioJson[pId].link; 
             
+            doucment.getElementById("p-Banner").innerHTML = `   <a class="popup-image" href="assets/images/portfolio/${portfolioJson[pId].type}/${portfolioJson[pId].title}/Title.jpg">
+                                                                    <img src="assets/images/portfolio/${portfolioJson[pId].type}/${portfolioJson[pId].title}/Title.jpg" />
+                                                                </a>`;
+
             
             for (let i = 0; i < portfolioJson[pId].imgcount; i++) {
                 document.getElementById("portfolio-images").innerHTML += PortfolioImage(i+1, portfolioJson[pId].type, portfolioJson[pId].title);

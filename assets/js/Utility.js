@@ -147,9 +147,6 @@ function SecondaryHeader(){
                                                     </li> 
                                                     <li>
                                                         <a class="nav-link" href="portfolio.html">Projects</a>
-                                                    </li>                                 
-                                                    <li>
-                                                        <a class="nav-link" href="team.html">Team</a>
                                                     </li>  
                                                 </ul> <!-- /.menu-list -->
                                             </div> <!-- /.hours-content-->
@@ -159,7 +156,7 @@ function SecondaryHeader(){
 
                                 <div class="header-navigation-right">
                                     <div class="lets-talk-area">
-                                        <a class="btn btn-default" href="#">Let's Talk</a>
+                                        <a class="btn btn-default" href="https://calendly.com/arcanine_co" target="_blank">Let's Talk</a>
                                     </div><!--~./ lets-talk-area ~-->
                                 </div><!--~./ header-navigation-right ~-->
                             </div><!-- /.navigation-area -->
@@ -168,6 +165,11 @@ function SecondaryHeader(){
                 </div><!-- /.container-fluid -->
                 </header>`;
     
+                                                 
+            //     <li>
+            //     <a class="nav-link" href="team.html">Team</a>
+            // </li>
+
     document.write(data);
 
 }
@@ -252,6 +254,24 @@ function CallToAction(){
     document.write(data);
 }
 
+function PrintRequestPortfolio(){
+    
+    var data = `<div class="call-to-action bg-center" style="background-image: url('assets/images/bg/map.png');">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <h2 class="call-to-title">Request Private <span>Portfolio</span> together</h2><!-- /.call-to-title -->
+                                <div class="action-btn-group pd-t-40">
+                                    <a href="#" class="btn btn-default">Request Portfolio</a>
+                                </div><!-- /.action-btn-group -->
+                            </div><!-- /.col-lg-8 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!--~~./ end call to action ~~-->`;
+
+    document.write(data);
+}
+
 function PrintTestimonials(){
 
     var jsonData = JSON.parse(GetJsonData("https://raw.githubusercontent.com/xeeshanqaswar/Host-Json/master/Arcanine/Testimonials.json"));
@@ -325,4 +345,12 @@ function PrintTestimonials(){
         return unitTestimonial;
     }
 
+}
+
+function PrintLetsTalk(){
+    let data = `<div class="lets-talk-area">
+                <a class="btn btn-default" href="https://calendly.com/arcanine_co" target="_blank">Let's Talk</a>
+                </div><!--~./ lets-talk-area ~-->`
+
+    document.write(data);
 }
