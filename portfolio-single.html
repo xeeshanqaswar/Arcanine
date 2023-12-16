@@ -224,20 +224,19 @@
         $(document).ready(function(){
 
             var portfolioJson = JSON.parse(GetJsonData("https://raw.githubusercontent.com/xeeshanqaswar/Host-Json/master/Arcanine/Portfolio.json"));
-
+           
             let url = new URL(document.location);
             let params = new URLSearchParams(url.search);
 
             let pId = params.get("id");
-
             document.getElementById("portfolio-breadcrumb").innerHTML = portfolioJson[pId].title; 
             document.getElementById("p-title").innerHTML = portfolioJson[pId].name; 
             document.getElementById("p-desc").innerHTML = portfolioJson[pId].description; 
             document.getElementById("p-client").innerHTML = portfolioJson[pId].client; 
             document.getElementById("p-date").innerHTML = portfolioJson[pId].date; 
-            document.getElementById("p-link").href = portfolioJson[pId].link; 
+            // document.getElementById("p-link").href = portfolioJson[pId].link; 
             
-            doucment.getElementById("p-Banner").innerHTML = `   <a class="popup-image" href="assets/images/portfolio/${portfolioJson[pId].type}/${portfolioJson[pId].title}/Title.jpg">
+            document.getElementById("p-Banner").innerHTML = `    <a class="popup-image" href="assets/images/portfolio/${portfolioJson[pId].type}/${portfolioJson[pId].title}/Title.jpg">
                                                                     <img src="assets/images/portfolio/${portfolioJson[pId].type}/${portfolioJson[pId].title}/Title.jpg" />
                                                                 </a>`;
 
