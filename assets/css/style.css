@@ -11843,6 +11843,7 @@ a:hover, a:active {
   text-align: left;
   font-size: 14px;
 }
+.contact-block-area .contact-form-area .contact-form .form-group select,
 .contact-block-area .contact-form-area .contact-form .form-group input,
 .contact-block-area .contact-form-area .contact-form .form-group textarea {
   color: #293b5f;
@@ -11852,13 +11853,17 @@ a:hover, a:active {
   background-color: transparent;
   border-bottom: 1px solid #dddddd;
   padding: 0 0 10px !important;
+
+  outline: none;
 }
 @media only screen and (max-width: 767px) {
+  .contact-block-area .contact-form-area .contact-form .form-group select,
   .contact-block-area .contact-form-area .contact-form .form-group input,
   .contact-block-area .contact-form-area .contact-form .form-group textarea {
     font-size: 15px;
   }
 }
+.contact-block-area .contact-form-area .contact-form .form-group select:focus,
 .contact-block-area .contact-form-area .contact-form .form-group input:focus,
 .contact-block-area .contact-form-area .contact-form .form-group textarea:focus {
   color: #293b5f;
