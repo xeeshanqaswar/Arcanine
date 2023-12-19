@@ -156,7 +156,7 @@ function SecondaryHeader(){
 
                                 <div class="header-navigation-right">
                                     <div class="lets-talk-area">
-                                        <a class="btn btn-default" href="https://calendly.com/arcanine_co" target="_blank">Let's Talk</a>
+                                        <a class="btn btn-default" href="https://calendly.com/arcanine_co" target="_blank">Consultation</a>
                                     </div><!--~./ lets-talk-area ~-->
                                 </div><!--~./ header-navigation-right ~-->
                             </div><!-- /.navigation-area -->
@@ -244,7 +244,7 @@ function CallToAction(){
                                 <h2 class="call-to-title">Let’s create creativity inspiration <span>projects</span> together</h2><!-- /.call-to-title -->
                                 <div class="action-btn-group pd-t-40">
                                     <a href="contact.html" class="btn btn-default btn-primary">Request a Quote</a>
-                                    <a href="https://calendly.com/arcanine_co" target="_blank" class="btn btn-default">Let's Talk</a>
+                                    <a href="https://calendly.com/arcanine_co" target="_blank" class="btn btn-default">Consultation</a>
                                 </div><!-- /.action-btn-group -->
                             </div><!-- /.col-lg-8 -->
                         </div><!-- /.row -->
@@ -349,7 +349,7 @@ function PrintTestimonials(){
 
 function PrintLetsTalk(){
     let data = `<div class="lets-talk-area">
-                <a class="btn btn-default" href="https://calendly.com/arcanine_co" target="_blank">Let's Talk</a>
+                <a class="btn btn-default" href="https://calendly.com/arcanine_co" target="_blank">Consultation</a>
                 </div><!--~./ lets-talk-area ~-->`
 
     document.write(data);
