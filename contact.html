@@ -192,7 +192,7 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <select name="type">
+                                                <select id="projectType">
                                                     <option disabled selected>Project Type</option>
                                                     <option value="Mobile Design">Mobile Design</option>
                                                     <option value="Web Design">Web Design</option>
@@ -205,7 +205,7 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <select name="type">
+                                                <select id ="budget">
                                                     <option disabled selected>Estimate Budget</option>
                                                     <option value="1000 - 10000">$1000 - $10,000</option>
                                                     <option value="10,000 - 50,000">$10,000 - $50,000</option>
@@ -268,8 +268,52 @@
     <script src="assets/js/odometer.min.js"></script>
     <script src="assets/js/isInViewport.jquery.js"></script>
     <script src="assets/js/TweenMax.min.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCO5gB5AYjVEtuZxzRDMCOQ8_PEXikYRcg"></script>
+    <!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCO5gB5AYjVEtuZxzRDMCOQ8_PEXikYRcg"></script>-->
     <script src="assets/js/maps.js"></script>
-    <script src="assets/js/main.js"></script><!-- main-js -->
+    <script src="assets/js/main.js"></script>main-js
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+    <script>
+
+        const form = document.querySelector("form");
+
+        function SendEmail(){
+
+                const name = form.elements["name"].value;
+                const email = form.elements["email"].value;
+                const phone = form.elements["phone"].value;
+                const file = form.elements["file"].value;
+                const details = form.elements["details"].value;
+
+                let selectOpt = document.getElementById("projectType");
+                const projectType = selectOpt.options[selectOpt.selectedIndex].value;
+
+                selectOpt = document.getElementById("budget");
+                const projectBudget = selectOpt.options[selectOpt.selectedIndex].value;
+
+                const messageBody = `   Client Name: ${name}<br> Email: ${email}<br> Phone No: ${phone}<br> Type: ${projectType}<br> 
+                                        Budget: ${projectBudget}<br> Description:<br>${details}<br>`;
+
+                Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "official@arcanine.co",
+                Password : "C8004B48730A3CEF1E2683E291F86EB5C858",
+                To : 'official@arcanine.co',
+                From : "official@arcanine.co",
+                Subject : "Project Quotation",
+                Body : "sfasd",
+            }).then(
+                message => alert(message)
+            );
+        }
+
+        form.addEventListener("submit", (e)=> {
+            e.preventDefault();
+            SendEmail();
+        });
+
+    </script>
+
 </body>
 </html>
