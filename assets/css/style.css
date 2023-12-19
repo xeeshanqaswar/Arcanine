@@ -12007,6 +12007,17 @@ a:hover, a:active {
   display: none;
 }
 
+.contact-form .field-error{
+  color: #ff1513;
+  font-size: 12px;
+  display: none;    
+  position: absolute;
+}
+
+.form-group.error .field-error{
+  display: block;
+}
+
 /*--------------------------------------------------------------
 ## 404 Page
 --------------------------------------------------------------*/
