@@ -174,21 +174,21 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input name="name" class = "form-field" type="text" placeholder="Full Name*" />
+                                                <input name="name" autocomplete ="off" class = "form-field" type="text" placeholder="Full Name*" />
                                                 <p class="field-error">Please provide your name</p>
                                             </div>
                                         </div><!-- /.col-md-6 -->                 
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input name="email" class = "form-field" type="email" placeholder="Email Address*"/>
+                                                <input name="email" autocomplete ="off" class = "form-field" type="email" placeholder="Email Address*"/>
                                                 <p class="field-error">Please enter a valid email</p>
                                             </div>
                                         </div><!-- /.col-md-6 -->             
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input name="phone" class = "form-field" type="text" placeholder="Phone Number*" />
+                                                <input name="phone" autocomplete ="off" class = "form-field" type="text" placeholder="Phone Number*" />
                                             </div>
                                         </div><!-- /.col-md-6 -->         
 
@@ -219,7 +219,7 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input name="file" type="file" />
+                                                <input name="file" accept=".pdf,.txt,.html,.js,.css,.odt,.odp,.odf,.docx" type="file" onchange="convertFile()" />
                                             </div>
                                         </div><!-- /.col-md-12 -->
 
@@ -287,7 +287,6 @@
         const name = form.elements["name"];
         const email = form.elements["email"];
         const phone = form.elements["phone"];
-        const file = form.elements["file"];
         const details = form.elements["details"];
 
         const selectType = document.getElementById("projectType");
@@ -297,9 +296,10 @@
         const projectBudget = selectBudget.options[selectBudget.selectedIndex];
 
 
+        let file;
+        let convertedFile;
 
         function SendEmail(){
-                console.log("sfaf");
                 const messageBody = `   Client Name: ${name.value}<br> Email: ${email.value}<br> Phone No: ${phone.value}<br> Project Type: ${projectType.value}<br> 
                                         Project Budget: ${projectBudget.value}<br> Description:<br>${details.value}<br>`;
 
@@ -311,6 +311,10 @@
                 From : "official@arcanine.co",
                 Subject : "Project Quotation",
                 Body : messageBody,
+                Attachments: [{
+                                name : file.name,
+                                data : convertedFile
+                            }]
             }).then(
                 message =>{
                     if (message == "OK") {
@@ -320,6 +324,8 @@
                             icon: "success",
                             showConfirmButton: false,
                         });
+                        
+                        form.reset();
                     }
                 }
             );
@@ -377,6 +383,15 @@
                 email.parentElement.classList.remove("error");
             }
         }
+
+        function convertFile(){
+            file = event.srcElement.files[0];
+            var reader = new FileReader();
+            reader.readAsBinaryString(file);
+            reader.onload = function () {
+                convertedFile = "data:" + file.type + ";base64," + btoa(reader.result);
+            }
+        };
 
     </script>
 
