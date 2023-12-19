@@ -6545,6 +6545,15 @@ a:hover, a:active {
     margin-bottom: 150px;
   }
 }
+
+.hero-block.style-one .hero-shape-overlay video{
+  height: 800px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
 @media only screen and (max-width: 767px) {
   .hero-block.style-one {
     background-image: none !important;
