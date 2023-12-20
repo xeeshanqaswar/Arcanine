@@ -241,7 +241,7 @@ function CallToAction(){
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
-                                <h2 class="call-to-title">Let’s create creativity inspiration <span>projects</span> together</h2><!-- /.call-to-title -->
+                                <h2 class="call-to-title">Let's Ignite Your Next <span>Project</span> with <span>Passion</span> and <span>Expertise</span></h2><!-- /.call-to-title -->
                                 <div class="action-btn-group pd-t-40">
                                     <a href="contact.html" class="btn btn-default btn-primary">Request a Quote</a>
                                     <a href="https://calendly.com/arcanine_co" target="_blank" class="btn btn-default">Consultation</a>
@@ -288,8 +288,8 @@ function PrintTestimonials(){
                         <div class="row align-items-center justify-content-between">
                             <div class="col-lg-5 col-md-8">
                                 <div class="section-title">
-                                    <h4 class="title-sub">testimonials <img src="assets/images/icon/divider.png" alt="icon"></h4><!--  /.title-sub -->
-                                    <h2 class="title-main">Authenticity, honesty, & personal voice </h2><!-- /.title-main -->
+                                    <h4 class="title-sub">Endorsements <img src="assets/images/icon/divider.png" alt="icon"></h4><!--  /.title-sub -->
+                                    <h2 class="title-main">Client Perspectives and Experiences </h2><!-- /.title-main -->
                                 </div><!-- /.section-title -->
                                 <div class="btn-links-area">
                                     <button class="btn-links btn-prev">
