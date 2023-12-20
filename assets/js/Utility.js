@@ -90,7 +90,7 @@ function SecondaryFooter(){
                 </div><!--~./ end copyright ~-->
                 <div class="col-md-6">
                     <div class="copyright-text">
-                        <p>© 2019 Wekala. Powered By <a href="#">Creative Wp</a></p>
+                        <p>© 2022 - 2023 <a href="index.html">Arcanine</a> &nbsp;All Rights Reserved</p>
                     </div><!--~./ end footer menu ~-->
                 </div>
             </div>
@@ -156,7 +156,7 @@ function SecondaryHeader(){
 
                                 <div class="header-navigation-right">
                                     <div class="lets-talk-area">
-                                        <a class="btn btn-default" href="https://calendly.com/arcanine_co" target="_blank">Consultation</a>
+                                        <a class="btn btn-default lets-talk-btn" href="https://calendly.com/arcanine_co" target="_blank">Consultation</a>
                                     </div><!--~./ lets-talk-area ~-->
                                 </div><!--~./ header-navigation-right ~-->
                             </div><!-- /.navigation-area -->
@@ -349,7 +349,7 @@ function PrintTestimonials(){
 
 function PrintLetsTalk(){
     let data = `<div class="lets-talk-area">
-                <a class="btn btn-default" href="https://calendly.com/arcanine_co" target="_blank">Consultation</a>
+                <a class="btn btn-default lets-talk-btn" href="https://calendly.com/arcanine_co" target="_blank">Consultation</a>
                 </div><!--~./ lets-talk-area ~-->`
 
     document.write(data);
