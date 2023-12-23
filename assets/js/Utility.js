@@ -104,8 +104,7 @@ function SecondaryFooter(){
 
 function SecondaryHeader(){
 
-    var data = `
-                <header class="site-header default-header-style">
+    var data = `<header class="site-header default-header-style">
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-12">
@@ -276,7 +275,6 @@ function PrintRequestPortfolio(){
 function PrintTestimonials(){
 
     var jsonData = JSON.parse(GetJsonData("https://raw.githubusercontent.com/xeeshanqaswar/Host-Json/master/Arcanine/Testimonials.json"));
-    console.log(jsonData);
     let tempData;
     for (let i = 0; i < jsonData.length; i++) {
         
@@ -354,4 +352,5 @@ function PrintLetsTalk(){
                 </div><!--~./ lets-talk-area ~-->`
 
     document.write(data);
+
 }

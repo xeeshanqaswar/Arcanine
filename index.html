@@ -371,7 +371,7 @@
                         <div class="innovation-contant-area">
                             <div class="section-title">
                                 <h4 class="title-sub">cases study<img src="assets/images/icon/divider.png" alt="icon"></h4><!--  /.title-sub -->
-                                <h2 class="title-main">Business has only two functions are marketing and innovation</h2><!-- /.title-main -->
+                                <h2 class="title-main">A Journey Through Impactful Case Studies</h2><!-- /.title-main -->
                             </div><!-- /.section-title -->
                             
                             <div class="btn-links-area">
@@ -387,37 +387,9 @@
                     
                     <div class="col-lg-7">
                         <div id="innovation-carousel" class="owl-carousel reveal-left" data-owl-items="2" data-owl-margin="30" data-owl-dots="0" data-owl-loop="1" data-owl-center="0">
-                            <div class="item">
-                                <div class="portfolio-item portfolio-one">
-                                    <figure class="portfolio-thumb">
-                                        <img src="assets/images/portfolio/innovation/1/1.jpg" alt="Portfolio Item">
-                                        <div class="content">
-                                            <div class="portfolio-title">
-                                                <h3><a href="portfolio-single.html">Branding Abstract</a></h3>
-                                            </div>
-                                            <div class="icon">
-                                                <a href="portfolio-single.html"><span class="fa fa-long-arrow-right"></span></a>
-                                            </div>
-                                        </div><!-- /.content -->   
-                                    </figure><!-- /.portfolio-thumb -->               
-                                </div><!-- /.portfolio-item -->
-                            </div><!-- /.item -->
                             
-                            <div class="item">
-                                <div class="portfolio-item portfolio-one">
-                                    <figure class="portfolio-thumb">
-                                        <img src="assets/images/portfolio/innovation/1/2.jpg" alt="Portfolio Item">
-                                        <div class="content">
-                                            <div class="portfolio-title">
-                                                <h3><a href="portfolio-single.html">Branding Abstract</a></h3>
-                                            </div>
-                                            <div class="icon">
-                                                <a href="portfolio-single.html"><span class="fa fa-long-arrow-right"></span></a>
-                                            </div>
-                                        </div><!-- /.content -->   
-                                    </figure><!-- /.portfolio-thumb -->               
-                                </div><!-- /.portfolio-item -->
-                            </div><!-- /.item -->
+                            <!-- Case Study data goes here -->
+
                         </div>
                     </div><!-- /.col-lg-7 -->
                 </div><!-- /.row -->
@@ -625,5 +597,45 @@
     <script src="assets/js/isInViewport.jquery.js"></script>
     <script src="assets/js/TweenMax.min.js"></script>
     <script src="assets/js/main.js"></script><!-- main-js -->
+
+    <script>
+
+        var portfolioJson = JSON.parse(GetJsonData("https://raw.githubusercontent.com/xeeshanqaswar/Host-Json/master/Arcanine/Portfolio.json"));
+
+        let caseStudies = [0,1,2];
+        let allCaseStudies = "";
+
+        for (let i = 0; i < caseStudies.length; i++) {
+            allCaseStudies += GetPortfolioBlock(caseStudies[i]);
+        }
+
+        document.getElementById("innovation-carousel").innerHTML = allCaseStudies;
+
+        function GetPortfolioBlock(id){
+
+            let name = portfolioJson[id].name;
+            let title = portfolioJson[id].title;
+            let type = portfolioJson[id].type;
+
+            let redirectUrl = `portfolio-single.html?${projectId}=${id}`;
+
+            return `<div class="item">
+                        <div class="portfolio-item portfolio-one">
+                            <figure class="portfolio-thumb">
+                                <img src="assets/images/portfolio/${type}/${title}/display.jpg" alt="${name}">
+                                <div class="content">
+                                    <div class="portfolio-title">
+                                        <h3><a href="${redirectUrl}">${name}</a></h3>
+                                    </div>
+                                    <div class="icon">
+                                        <a href="portfolio-single.html"><span class="fa fa-long-arrow-right"></span></a>
+                                    </div>
+                                </div> 
+                            </figure>               
+                        </div>
+                    </div>`;
+        }
+    </script>
+
 </body>
 </html>
