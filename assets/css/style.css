@@ -8644,6 +8644,8 @@ a:hover, a:active {
   margin-bottom: 30px;
 }
 .portfolio-item .portfolio-thumb {
+  
+  border: 1px solid #0000001c;
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -9034,6 +9036,7 @@ a:hover, a:active {
 }
 .portfolio-page-block figure {
   margin-bottom: 30px;
+  border: 1px solid #0000001c;
 }
 .portfolio-page-block figure a {
   display: inline-block;

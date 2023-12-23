@@ -86,7 +86,7 @@
                             <div class="breadcrumb-area">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>  
-                                    <li class="breadcrumb-item"><a href="portfolio-v1.html">Portfolio</a></li>  
+                                    <li class="breadcrumb-item"><a href="portfolio.html">Portfolio</a></li>  
                                     <li id="portfolio-breadcrumb" class="breadcrumb-item active">Portfolio Single</li>
                                 </ol>
                             </div><!--~~./ breadcrumb-area ~~-->
@@ -234,7 +234,7 @@
             let params = new URLSearchParams(url.search);
 
             let pId = params.get("id");
-            document.getElementById("portfolio-breadcrumb").innerHTML = portfolioJson[pId].title; 
+            document.getElementById("portfolio-breadcrumb").innerHTML = portfolioJson[pId].name; 
             document.getElementById("p-title").innerHTML = portfolioJson[pId].name; 
             document.getElementById("p-desc").innerHTML = portfolioJson[pId].description; 
             document.getElementById("p-client").innerHTML = portfolioJson[pId].client; 

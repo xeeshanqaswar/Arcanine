@@ -156,7 +156,7 @@ function SecondaryHeader(){
 
                                 <div class="header-navigation-right">
                                     <div class="lets-talk-area">
-                                        <a class="btn btn-default lets-talk-btn" href="https://calendly.com/arcanine_co" target="_blank">Consultation</a>
+                                        <a class="btn btn-default lets-talk-btn" href="https://calendly.com/arcanine_co" target="_blank">Book a Meeting</a>
                                     </div><!--~./ lets-talk-area ~-->
                                 </div><!--~./ header-navigation-right ~-->
                             </div><!-- /.navigation-area -->
@@ -177,18 +177,19 @@ function SecondaryHeader(){
 function SetPortfolio(){
 
     var portfolioJson = JSON.parse(GetJsonData("https://raw.githubusercontent.com/xeeshanqaswar/Host-Json/master/Arcanine/Portfolio.json"));
-
     let itemType;
     let projectTitle;
+    let projectName;
 
     for (let i = 0; i < portfolioJson.length; i++) {
 
         itemType = portfolioJson[i].type;
         projectTitle = portfolioJson[i].title;
-        document.write(baseData(itemType, projectTitle,i));
+        projectName = portfolioJson[i].name;
+        document.write(baseData(itemType, projectTitle,projectName,i));
     }
 
-    function baseData(pType, pTitle, id){
+    function baseData(pType, pTitle,pName, id){
         
         let imgUrl = `assets/images/portfolio/${pType}/${pTitle}/display.jpg`;
         let redirectUrl = `portfolio-single.html?${projectId}=${id}`;
@@ -199,7 +200,7 @@ function SetPortfolio(){
                             <img src="${imgUrl}" alt="Portfolio Item">
                             <div class="content">
                                 <div class="portfolio-title">
-                                    <h3><a href="${redirectUrl}">${pTitle}</a></h3>
+                                    <h3><a href="${redirectUrl}">${pName}</a></h3>
                                 </div>
                                 <div class="icon">
                                     <a href="${redirectUrl}"><span class="fa fa-long-arrow-right"></span></a>
@@ -349,7 +350,7 @@ function PrintTestimonials(){
 
 function PrintLetsTalk(){
     let data = `<div class="lets-talk-area">
-                <a class="btn btn-default lets-talk-btn" href="https://calendly.com/arcanine_co" target="_blank">Consultation</a>
+                <a class="btn btn-default lets-talk-btn" href="https://calendly.com/arcanine_co" target="_blank">Book a Meeting</a>
                 </div><!--~./ lets-talk-area ~-->`
 
     document.write(data);
