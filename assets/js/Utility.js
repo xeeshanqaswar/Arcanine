@@ -425,3 +425,9 @@ function PrintWorkflow(){
 
     document.write(data);
 }
+
+function PrintPhonenumber(){
+
+    let data  = "+92000000000";
+    document.write(data);
+}
