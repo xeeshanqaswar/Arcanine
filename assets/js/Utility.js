@@ -244,7 +244,7 @@ function CallToAction(){
                                 <h2 class="call-to-title">Let's Ignite Your Next <span>Project</span> with <span>Passion</span> and <span>Expertise</span></h2><!-- /.call-to-title -->
                                 <div class="action-btn-group pd-t-40">
                                     <a href="contact.html" class="btn btn-default btn-primary">Request a Quote</a>
-                                    <a href="https://calendly.com/arcanine_co" target="_blank" class="btn btn-default">Consultation</a>
+                                    <a href="https://calendly.com/arcanine_co" target="_blank" class="btn btn-default">Book a Meeting</a>
                                 </div><!-- /.action-btn-group -->
                             </div><!-- /.col-lg-8 -->
                         </div><!-- /.row -->
