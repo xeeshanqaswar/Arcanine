@@ -353,4 +353,75 @@ function PrintLetsTalk(){
 
     document.write(data);
 
+
+
+}
+
+function PrintWorkflow(){
+    let data = `<div id="work-process-block" class="work-process-block proces-style-two mrb-200">
+                    <div class="container ml-b-45">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="section-title text-center" data-animate="hg-fadeInUp" data-duration="1.0s" data-delay="0.1s" data-offset="100">
+                                    <h4 class="title-sub">WORKFLOW</h4><!--  /.title-sub -->
+                                    <h2 class="title-main">Comprehensive Workflow for <br> Efficiency and Excellence</h2><!-- /.title-main -->
+                                    <p class="title-text"> Delivering Excellence with the Rhythm of <br>Agile Software Development</p>
+                                    <div class="divider">
+                                        <img src="assets/images/icon/divider.png" alt="icon">
+                                    </div>
+                                </div><!-- /.section-title -->
+                            </div>
+                        </div>
+
+                        <div class="row process-list">
+                            <div class="bg-line" style="background-image:url('assets/images/others/linearrow.png')"></div><!-- /.bg-line -->
+                            
+                            <!--~./ Start Single Process ~-->
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="single-process" data-animate="hg-fadeInUp" data-duration="1.0s" data-offset="100">
+                                    <div class="icon bg-zinnwaldite">
+                                        <span class="icon-binoculars-business-management-vision"></span>
+                                        <h3 class="process-no">1</h3>
+                                    </div>
+                                    <h2 class="process-step">Plan</h2>
+                                </div>
+                            </div><!--~./ end single process ~-->
+
+                            <!--~./ Start Single Process ~-->
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="single-process" data-animate="hg-fadeInUp" data-duration="1.0s"  data-offset="100">
+                                    <div class="icon bg-silver-tree">
+                                        <span class="icon-business-management-presentation-statistic-stats"></span>
+                                        <h3 class="process-no">2</h3>
+                                    </div>
+                                    <h2 class="process-step">Sprint</h2>
+                                </div>
+                            </div><!--~./ end single process ~-->
+
+                            <!--~./ Start Single Process ~-->
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="single-process" data-animate="hg-fadeInUp" data-duration="1.0s" data-offset="100">
+                                    <div class="icon bg-medium-purple">
+                                        <span class="icon-badge-pass-security-security-icon"></span>
+                                        <h3 class="process-no">3</h3>
+                                    </div>
+                                    <h2 class="process-step">Iteration</h2>
+                                </div>
+                            </div><!--~./ end single process ~-->
+
+                            <!--~./ Start Single Process ~-->
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="single-process" data-animate="hg-fadeInUp" data-duration="1.0s" data-offset="100">
+                                    <div class="icon bg-curious-blue">
+                                        <span class="icon-rocket3"></span>
+                                        <h3 class="process-no">4</h3>
+                                    </div>
+                                    <h2 class="process-step">Release</h2>
+                                </div>
+                            </div><!--~./ end single process ~-->
+                        </div>
+                    </div><!-- /.container -->
+                </div><!--~~./ end work process block ~~-->`
+
+    document.write(data);
 }
