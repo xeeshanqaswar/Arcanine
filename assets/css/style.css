@@ -4535,6 +4535,12 @@ object {
 .site-header .navigation-area .site-branding a {
   display: inline-block;
 }
+
+.site-branding a img{
+  width: 80px;
+}
+  
+
 .site-header .navigation-area .header-navigation-right {
   display: -webkit-box;
   display: -ms-flexbox;
