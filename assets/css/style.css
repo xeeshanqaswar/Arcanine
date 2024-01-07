@@ -4536,10 +4536,9 @@ object {
   display: inline-block;
 }
 
-.site-branding a img{
+.site-branding a img, .footer-logo a img{
   width: 150px;
 }
-  
 
 .site-header .navigation-area .header-navigation-right {
   display: -webkit-box;
@@ -13375,6 +13374,9 @@ input[type="checkbox"]::-ms-check {
 }
 .bt-about-footer-widget .about-logo img {
   display: inline-block;
+  width: 150px;
+  position: relative;
+  top: -10px;
 }
 .bt-about-footer-widget p {
   line-height: 1.7em;
