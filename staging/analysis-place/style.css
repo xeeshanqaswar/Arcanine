@@ -258,11 +258,11 @@ body {
     color: #000;
     text-align: left;
     font-weight: 600;
-   line-height:  64.92px;
-  font-style: normal !important;
-    font-size: 54.4px;
+    line-height: 3vw;
+    font-style: normal !important;
+    font-size: 3vw;
     border-bottom: 1px solid #cccccc63;
-    padding: 10px 0;
+    padding: 10px 0 30px 0px;
 }
 .testimonial-author {
     font-size: 15px;
@@ -283,7 +283,7 @@ body {
     align-self: center;
     margin-top: 15px;
 }
-}
+
 .testimonial-arrow{
     display: flex;
     justify-content: space-between;
@@ -309,7 +309,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .testimonial-image {
@@ -414,6 +414,8 @@ body {
 .owl-carousel .owl-item {
     transition: transform 0.25s ease;
     transform-origin: center center; /* Ensures scaling is centered */
+    margin-top: 15px;
+    margin-bottom: 20px ;
 }
 
 .owl-carousel .owl-item:not(.center) .item {
@@ -430,13 +432,14 @@ body {
 .owl-carousel .center .item {
     transform: scale(1.2);
     opacity: 1;
-    border: 2px solid /* Change #ccc to whatever color you want */
-    background-color: #f9f9f9; /* Change #f9f9f9 to whatever color you want */
-    padding: 20px; /* Adjust padding as needed */
-    margin-top: 30px; /* Space from the top of the carousel */
-    margin-bottom: 30px; /* Space from the bottom of the carousel */
-    box-shadow: 4px 2px 4px 4px rgba(0,0,0,0.2); /* Optional: Adds shadow for depth */
-    transition: transform 0.25s ease, box-shadow 0.25s ease; /* Smooth transitions for scale and shadow */
+    border: none;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0px 5px 0px 0px rgb(0 0 0 / 11%);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 10px;
 }
 
 /* Non-central items styling */
@@ -447,31 +450,18 @@ body {
 
 /* Ensure non-central items do not have styles that are only for the central item */
 .owl-carousel .owl-item:not(.center) .item {
-   border: none; /* Remove border from non-central items */
-     background-color: #dbdbdb; /* Remove background from non-central items */
-    padding: 0; /* Remove padding from non-central items */
-    margin-top: 0; /* Remove top margin from non-central items */
-    margin-bottom: 0; /* Remove bottom margin from non-central items */
-    box-shadow: none; /* Remove shadow from non-central items */
-
-
-
- opacity: 1;
-    border: 2px solid /* Change #ccc to whatever color you want */
-    background-color: #f9f9f9; /* Change #f9f9f9 to whatever color you want */
-    padding: 20px; /* Adjust padding as needed */
-    margin-top: 30px; /* Space from the top of the carousel */
-    margin-bottom: 30px; /* Space from the bottom of the carousel */
-    box-shadow: 4px 2px 4px 4px rgba(0,0,0,0.2); /* Optional: Adds shadow for depth */
+    border-radius: 20px;
+    opacity: 1;
+    border: 1px solid #ccc;
+    padding: 30px 50px;
+    background-color:#ddd; /* Change #f9f9f9 to whatever color you want */
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-
 }
+
 .owl-carousel .owl-item img {
     display: block;
-    margin-left: 40px;
-    width: 59% !important;
-    height: 100%;
+    max-width: 65px;
+    height: auto;
 }
 .testimonial-author {
     display: block;
@@ -580,4 +570,18 @@ body {
     transform: translate(-50%, -50%);
     font-size: 2rem; /* Play button size */
     color: white; /* Play button color */
+}
+
+@media (max-width: 992px) { 
+
+    .testimonial-text {
+        line-height: 5vw;
+        font-size: 5vw;
+    }
+
+    .owl-carousel .center .item{
+        transform: scale(1);
+        max-width: 90vw;
+        margin-left: 5vw;
+    }
 }
