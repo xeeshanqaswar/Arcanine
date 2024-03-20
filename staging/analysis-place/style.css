@@ -176,14 +176,8 @@ body {
     margin-top: 12%;
 }
 
-.footer-logo{
-    font-family: 'Poppins';
-    font-size: 26px;
-    font-weight: 600;
-    color: #fff !important;
-    span {
-        color: #007bff;
-    }
+.footer-logo img{
+    max-width: 220px;
 }
 
 .footer-first-row {
