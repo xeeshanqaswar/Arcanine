@@ -585,3 +585,11 @@ body {
         margin-left: 5vw;
     }
 }
+
+@media (max-width: 575.98px) {
+
+    .productivity-section{
+        border-radius: 0px;
+    }
+
+}
