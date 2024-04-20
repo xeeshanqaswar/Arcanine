@@ -150,33 +150,24 @@
 
 							<div class="row">
 
-								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
 									<div class="info-list ul-li-block clearfix">
 										<ul class="clearfix">
 											<li data-aos="fade-up" data-aos-delay="100">
-												<span>Client</span>
-												<p class="clientName">Ghaly Corporation</p>
+												<span>Try Demo</span>
+												<a href="#" class="demoLink" target="_blank">Live Link</a>
 											</li>
 										</ul>
 									</div>
 								</div>
 
-								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-									<div class="info-list ul-li-block clearfix">
-										<ul class="clearfix">
-											<li data-aos="fade-up" data-aos-delay="300">
-												<span>published</span>
-												<p class="publishedDate">Janurary 19, 2019</p>
-											</li>
-										</ul>
-									</div>
-								</div>
 
-								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+								<div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
 									<div class="info-list ul-li-block clearfix">
 										<ul class="clearfix">
 											<li data-aos="fade-up" data-aos-delay="500">
-												<span>TOOL STACK</span>
+												<span>TECH STACK</span>
 												<p class="techStack"><a href="#!">Branding</a><a href="#!">Graphic
 														Design</a></p>
 											</li>
@@ -340,7 +331,7 @@
 			var urlParams = new URLSearchParams(window.location.search);
 			var index = urlParams.get('Id');
 
-			fetch("https://xeeshanqaswar.github.io/File-Hosting/jsonfiles/design.json")
+			fetch("https://xeeshanqaswar.github.io/File-Hosting/arcanine/web.json")
 				.then(response => {
 					if (!response.ok) {
 						throw new Error('Network response was not ok');
@@ -348,16 +339,22 @@
 					return response.json();
 				})
 				.then(data => {
-					console.log(data[index]);
-					document.querySelector(".details-image").style.backgroundImage = `url(${data[index].title})`;
-					document.querySelector(".section-title h2").innerHTML = data[index].name;
-					document.querySelector(".section-title p").innerHTML = data[index].description;
-					document.querySelector(".clientName").innerHTML = data[index].client;
-					document.querySelector(".publishedDate").innerHTML = data[index].date;
 
+					document.querySelector(".demoLink").style.backgroundImage = data[index].banner;
+					document.querySelector("a.demoLink").setAttribute('href', data[index].Link);
+					document.querySelector(".details-image").style.backgroundImage = `url(${data[index].thumbnail})`;
+					document.querySelector(".section-title h2").innerHTML = data[index].name; // project heading
+					document.querySelector(".section-title p").innerHTML = data[index].summary; // project summary
 
+					// Update Tech stack
+					document.querySelector(".techStack").innerHTML = "";
+					data[index].techStack.forEach(element => {
+						document.querySelector(".techStack").innerHTML += `<a>${element}</a>`;
+					});
+
+					// Portfolio Images
 					document.querySelector(".portfolio-section div div div").innerHTML = "";
-					data[index].itemList.forEach(element => {
+					data[index].portfolioItems.forEach(element => {
 
 						var data = `<div class="portfolio-fullimage" data-aos="fade-up" data-aos-delay="100">
 										<img src="${element}" alt="image_not_found">
@@ -365,24 +362,25 @@
 						document.querySelector(".portfolio-section div div div").innerHTML += data;
 					});
 
+					// Next and previous Logic
 					var previous = index - 1;
 					var next = index + 1;
 
 					if (previous < 0) {
-						document.querySelector(".prev").setAttribute('href', 'design.html');
+						document.querySelector(".prev").setAttribute('href', 'index.html');
 						document.querySelector(".prev span").innerHTML = "Back to Home";
 					} else {
-						document.querySelector(".prev").setAttribute('href', 'singleDesign.html?Id=' + previous);
+						document.querySelector(".prev").setAttribute('href', 'singleApp.html?Id=' + previous);
 						document.querySelector(".prev span").innerHTML = data[previous].name;
 					}
 
-					if (next >= data.length) {
+					if (next >= portfolioLimit) {
 
-						document.querySelector(".next").setAttribute('href', 'design.html');
+						document.querySelector(".next").setAttribute('href', 'index.html');
 						document.querySelector(".next span").innerHTML = "Back to Home";
 					} else {
 
-						document.querySelector(".next").setAttribute('href', 'singleDesign.html?Id=' + next);
+						document.querySelector(".next").setAttribute('href', 'singleApp.html?Id=' + next);
 						document.querySelector(".next span").innerHTML = data[next].name;
 					}
 
