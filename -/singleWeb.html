@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-	<title>Design - Showcase</title>
+	<title>WebDevelopmentWebDevelopment - Showcase</title>
 	<link rel="shortcut icon" href="assets/images/logo/favourite-icon.png">
 
 	<!-- css include -->
@@ -52,7 +52,7 @@
 
 				<div class="col-lg-2">
 					<div class="brand-logo">
-						<a href="design.html">
+						<a href="web.html">
 							<img src="assets/images/logo/logo_2.png" alt="logo_not_found">
 						</a>
 
@@ -339,9 +339,7 @@
 					return response.json();
 				})
 				.then(data => {
-
-					document.querySelector(".demoLink").style.backgroundImage = data[index].banner;
-					document.querySelector("a.demoLink").setAttribute('href', data[index].Link);
+					document.querySelector(".demoLink").setAttribute('href', data[index].link);
 					document.querySelector(".details-image").style.backgroundImage = `url(${data[index].thumbnail})`;
 					document.querySelector(".section-title h2").innerHTML = data[index].name; // project heading
 					document.querySelector(".section-title p").innerHTML = data[index].summary; // project summary

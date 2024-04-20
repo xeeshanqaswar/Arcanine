@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-	<title>Design - Showcase</title>
+	<title>WebDevelopment - Showcase</title>
 	<link rel="shortcut icon" href="assets/images/logo/favourite-icon.png">
 
 	<!-- css include -->
@@ -52,7 +52,7 @@
 
 				<div class="col-6">
 					<div class="brand-logo">
-						<a href="design.html">
+						<a href="web.html">
 							<img src="assets/images/logo/logo_2.png" alt="logo_not_found">
 						</a>
 					</div>
@@ -328,7 +328,7 @@
 				var index = 0;
 				data.forEach(element => {
 					console.log(element);
-					document.querySelector(".portfolio-section .masoney-grid").innerHTML += GetBlock(index, element.thumbnail, element.name, element.tagline);
+					document.querySelector(".portfolio-section .masoney-grid").innerHTML += GetBlock(index, element.thumbnail, element.name, element.techStack);
 					index++;
 				});
 
